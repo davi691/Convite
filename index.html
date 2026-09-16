@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Convite de Aniversário 🎂</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <main class="convite">
+
+        <div class="emoji-top">🎉 🎂 🎈</div>
+
+        <p class="pequeno">VOCÊ ESTÁ OFICIALMENTE CONVIDADO(A)</p>
+
+        <h1>
+            ANIVERSÁRIO
+            <span>DO FAFI</span>
+        </h1>
+
+        <p class="descricao">
+            Prepare-se para uma noite de muita comida (la ele)
+        </p>
+
+        <section class="informacoes">
+
+            <div class="info">
+                <div class="icone">📅</div>
+                <div>
+                    <strong>DATA</strong>
+                    <p>10 de Outubro de 2026</p>
+                </div>
+            </div>
+
+            <div class="info">
+                <div class="icone">⏰</div>
+                <div>
+                    <strong>HORA</strong>
+                    <p>19:00</p>
+                </div>
+            </div>
+
+            <div class="info">
+                <div class="icone">📍</div>
+                <div>
+                    <strong>LOCAL</strong>
+                    <p>Café Colonial Suruvi</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <div class="pergunta">
+            <h2>Você vai aparecer? 👀</h2>
+
+            <div class="botoes">
+
+                <button id="sim" onclick="aceitarConvite()">
+                    ✅ EU VOU!
+                </button>
+
+                <button id="nao">
+                    ❌ NÃO VOU
+                </button>
+
+            </div>
+        </div>
+
+        <p class="aviso">
+            ⚠️ Atenção: clicar em "NÃO VOU" pode causar consequências inesperadas.
+        </p>
+
+    </main>
+
+
+    <!-- TELA DE SUCESSO -->
+
+    <div id="sucesso" class="tela">
+
+        <div class="caixa-sucesso">
+
+            <div class="trofeu">🏆</div>
+
+            <h2>CONVITE ACEITO!</h2>
+
+            <p>
+                Sabia que você não conseguiria recusar. 😎
+            </p>
+
+            <div class="confetes">🎉 🎊 🥳 🎂 🎈</div>
+
+            <button onclick="fecharSucesso()">
+                VOLTAR
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- TELA DA PEGADINHA -->
+
+    <div id="pegadinha" class="tela">
+
+        <div class="caixa-pegadinha">
+
+            <div class="emoji-grande">😂</div>
+
+            <h2>COMO ASSIM NÃO?!</h2>
+
+            <p>
+                Essa opção foi temporariamente removida
+                pelo departamento de festas. 🤨
+            </p>
+
+            <button onclick="fecharPegadinha()">
+                TÁ BOM, EU VOU 😂
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    background: #0f1020;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* FUNDO */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+
+    background:
+        radial-gradient(circle at 20% 20%, #ff4ecd55, transparent 30%),
+        radial-gradient(circle at 80% 30%, #6c63ff55, transparent 30%),
+        radial-gradient(circle at 50% 90%, #00e5ff33, transparent 35%),
+        #0f1020;
+}
+
+/* CONVITE */
+
+.convite {
+    width: min(92%, 650px);
+    margin: 40px auto;
+    padding: 45px 35px;
+
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.5);
+
+    text-align: center;
+}
+
+.emoji-top {
+    font-size: 45px;
+    margin-bottom: 15px;
+
+    animation: flutuar 2s infinite ease-in-out;
+}
+
+.pequeno {
+    font-size: 12px;
+    letter-spacing: 3px;
+    opacity: 0.7;
+}
+
+h1 {
+    margin-top: 15px;
+    font-size: clamp(40px, 9vw, 70px);
+    line-height: 0.95;
+}
+
+h1 span {
+    display: block;
+
+    background: linear-gradient(
+        90deg,
+        #ff4ecd,
+        #6c63ff,
+        #00e5ff
+    );
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.descricao {
+    max-width: 500px;
+    margin: 25px auto;
+
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+/* INFORMAÇÕES */
+
+.informacoes {
+    margin-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    text-align: left;
+
+    padding: 16px;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    transition: 0.3s;
+}
+
+.info:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.13);
+}
+
+.icone {
+    font-size: 30px;
+    width: 55px;
+}
+
+.info strong {
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: 0.6;
+}
+
+.info p {
+    margin-top: 4px;
+}
+
+/* MAPA */
+
+.mapa {
+    width: 100%;
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.mapa:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+}
+
+/* PERGUNTA */
+
+.pergunta {
+    margin-top: 45px;
+}
+
+.pergunta h2 {
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    position: relative;
+    min-height: 60px;
+}
+
+.botoes button {
+    border: none;
+
+    padding: 17px 28px;
+
+    border-radius: 50px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#sim {
+    background: #27e36b;
+    color: #07150b;
+
+    box-shadow: 0 8px 25px rgba(39, 227, 107, 0.3);
+}
+
+#sim:hover {
+    transform: scale(1.08);
+}
+
+#nao {
+    background: #ff405d;
+    color: white;
+
+    position: relative;
+
+    transition: left 0.2s, top 0.2s;
+}
+
+.aviso {
+    margin-top: 25px;
+
+    font-size: 12px;
+
+    opacity: 0.45;
+}
+
+/* TELAS */
+
+.tela {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.8);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 100;
+}
+
+.tela.ativa {
+    display: flex;
+
+    animation: aparecer 0.3s ease;
+}
+
+.caixa-sucesso,
+.caixa-pegadinha {
+    width: min(90%, 500px);
+
+    text-align: center;
+
+    padding: 45px 30px;
+
+    border-radius: 30px;
+
+    background: #181a30;
+
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.7);
+}
+
+.trofeu,
+.emoji-grande {
+    font-size: 70px;
+
+    margin-bottom: 15px;
+
+    animation: pular 1s infinite;
+}
+
+.caixa-sucesso h2,
+.caixa-pegadinha h2 {
+    font-size: 32px;
+}
+
+.caixa-sucesso p,
+.caixa-pegadinha p {
+    margin: 20px 0;
+
+    line-height: 1.6;
+
+    opacity: 0.8;
+}
+
+.confetes {
+    font-size: 35px;
+    margin: 25px 0;
+}
+
+.caixa-sucesso button,
+.caixa-pegadinha button {
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    background: white;
+    color: #111;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pular {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .convite {
+        margin: 20px auto;
+        padding: 35px 20px;
+        border-radius: 22px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    .emoji-top {
+        font-size: 35px;
+    }
+
+    .botoes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .botoes button {
+        width: 90%;
+    }
+
+    #nao {
+        position: relative;
+    }
+
+    .info {
+        padding: 13px;
+    }
+
+    .icone {
+        font-size: 25px;
+        width: 45px;
+    }
+}
