@@ -164,10 +164,3 @@ function criarConfetes() {
         setTimeout(() => confete.remove(), duracao);
     }
 }
-
-window.addEventListener("resize", function() {
-    if (botaoNao.style.position === "fixed") {
-        botaoNao.style.left = "50%";
-        botaoNao.style.top = "auto";
-    }
-});
