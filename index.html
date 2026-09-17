@@ -1,134 +1,158 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convite de Aniversário 🎂</title>
+
+    <title>Aniversário do Fafi 🎉</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="background"></div>
 
     <main class="convite">
-        <div class="emoji-top">🎉 🎂 🎈</div>
-        <p class="pequeno">VOCÊ ESTÁ OFICIALMENTE CONVIDADO(A)</p>
 
-        <h1>
-            ANIVERSÁRIO
-            <span>DO FAFI</span>
-        </h1>
+        <div class="brilho brilho-1"></div>
+        <div class="brilho brilho-2"></div>
 
-        <p class="descricao">
-            Prepare-se para uma noite de muita comida (la ele)
-        </p>
+        <section class="conteudo">
 
-        <section class="informacoes">
-            <div class="info">
-                <div class="icone">📅</div>
-                <div><strong>DATA</strong><p>10 de Outubro de 2026</p></div>
+            <p class="tag">
+                🎉 VOCÊ ESTÁ CONVIDADO(A) 🎉
+            </p>
+
+            <h1>
+                ANIVERSÁRIO<br>
+                <span>DO FAFI</span>
+            </h1>
+
+            <p class="descricao">
+                Prepare-se para uma noite de muita comida,
+                diversão, música e resenha! 😎
+            </p>
+
+            <div class="informacoes">
+
+                <div class="info">
+                    <span class="icone">📅</span>
+
+                    <div>
+                        <small>DATA</small>
+                        <strong>10 de Outubro de 2026</strong>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <span class="icone">⏰</span>
+
+                    <div>
+                        <small>HORÁRIO</small>
+                        <strong>19:00</strong>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <span class="icone">📍</span>
+
+                    <div>
+                        <small>LOCAL</small>
+                        <strong>Café Colonial Suruvi</strong>
+                    </div>
+                </div>
+
             </div>
-            <div class="info">
-                <div class="icone">⏰</div>
-                <div><strong>HORA</strong><p>19:00</p></div>
+
+            <div class="acoes">
+
+                <a
+                    id="sim"
+                    class="botao botao-sim"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSdxdufLfiXMSiW837UCXH6PANYPSKDSiH8-M8Vgp-vI0q2Qsg/viewform?usp=dialog"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    EU VOU! 🎉
+                </a>
+
+                <button
+                    id="nao"
+                    class="botao botao-nao"
+                    type="button"
+                >
+                    NÃO VOU 😭
+                </button>
+
             </div>
-            <div class="info">
-                <div class="icone">📍</div>
-                <div><strong>LOCAL</strong><p>Café Colonial Suruvi</p></div>
-            </div>
+
+            <p class="aviso">
+                Clique em <strong>EU VOU!</strong> para confirmar
+                sua presença.
+            </p>
+
+            <button
+                id="mapa"
+                class="botao-mapa"
+                type="button"
+            >
+                📍 Ver localização
+            </button>
+
         </section>
 
-        <button class="mapa" onclick="abrirMapa()">📍 VER LOCAL NO MAPA</button>
-
-        <div class="pergunta">
-            <h2>Você vai aparecer? 👀</h2>
-            <div class="botoes">
-                <button id="sim" onclick="abrirConfirmacao()">✅ EU VOU!</button>
-                <button id="nao">❌ NÃO VOU</button>
-            </div>
-        </div>
-
-        <p class="aviso">
-            ⚠️ Atenção: clicar em "NÃO VOU" pode causar consequências inesperadas.
-        </p>
     </main>
 
-    <!-- CONFIRMAÇÃO -->
-    <div id="confirmacao" class="tela">
-        <div class="caixa-formulario">
-            <div class="emoji-grande">🎟️</div>
-            <h2>CONFIRME SUA PRESENÇA</h2>
-            <p>Primeiro, coloque seu nome:</p>
-
-            <input id="nome" type="text" maxlength="60"
-                   placeholder="Digite seu nome" autocomplete="name">
-
-            <button class="botao-principal" onclick="continuarConfirmacao()">
-                CONTINUAR
-            </button>
-            <button class="botao-secundario" onclick="fecharConfirmacao()">VOLTAR</button>
-            <p id="erroNome" class="erro"></p>
-        </div>
-    </div>
-
-    <!-- PRESENTE -->
-    <div id="presente" class="tela">
-        <div class="caixa-formulario">
-            <div class="emoji-grande">🎁</div>
-            <h2>ÚLTIMA PERGUNTA</h2>
-            <p><strong id="nomeMostrado"></strong>, você vai levar presente?</p>
-
-            <div class="escolhas">
-                <button class="presente-sim" onclick="responderPresente(true)">
-                    🎁 SIM, VOU LEVAR
-                </button>
-                <button class="presente-nao" onclick="responderPresente(false)">
-                    ❌ NÃO VOU LEVAR
-                </button>
-            </div>
-
-            <p id="erroPresente" class="erro"></p>
-        </div>
-    </div>
-
-    <!-- SUCESSO -->
-    <div id="sucesso" class="tela">
-        <div class="caixa-sucesso">
-            <div class="trofeu">🏆</div>
-            <h2>CONVITE ACEITO!</h2>
-            <p>
-                <strong id="nomeFinal"></strong>, sua presença foi confirmada! 🎉
-            </p>
-            <p id="presenteFinal"></p>
-            <div class="confetes">🎉 🎊 🥳 🎂 🎈</div>
-            <button onclick="fecharSucesso()">VOLTAR</button>
-        </div>
-    </div>
-
-    <!-- NÃO LEVA PRESENTE -->
-    <div id="bloqueado" class="tela">
-        <div class="caixa-pegadinha">
-            <div class="emoji-grande">🤨</div>
-            <h2>OPA!</h2>
-            <p>
-                <strong id="nomeBloqueado"></strong>, sem presente não dá para confirmar a presença. 😂
-            </p>
-            <p>Volte e escolha que vai levar um presente! 🎁</p>
-            <button onclick="voltarParaPresente()">ENTENDI 😂</button>
-        </div>
-    </div>
 
     <!-- PEGADINHA DO NÃO VOU -->
-    <div id="pegadinha" class="tela">
+
+    <div
+        id="telaPegadinha"
+        class="tela escondida"
+    >
+
         <div class="caixa-pegadinha">
-            <div class="emoji-grande">😂</div>
-            <h2>COMO ASSIM NÃO?!</h2>
+
+            <button
+                class="fechar"
+                id="fecharPegadinha"
+                type="button"
+            >
+                ×
+            </button>
+
+            <div class="emoji-grande">
+                😱
+            </div>
+
+            <h2>
+                COMO ASSIM NÃO?!
+            </h2>
+
             <p>
-                Essa opção foi temporariamente removida pelo departamento de festas. 🤨
+                Você realmente achou que podia
+                recusar o convite?
             </p>
-            <button onclick="fecharPegadinha()">TÁ BOM, EU VOU 😂</button>
+
+            <p class="menor">
+                Tenta clicar em "NÃO VOU" de novo... 👀
+            </p>
+
+            <button
+                id="voltarConvite"
+                class="botao botao-sim"
+                type="button"
+            >
+                TÁ BOM, EU VOU! 😂
+            </button>
+
         </div>
+
     </div>
 
+
     <script src="script.js"></script>
+
 </body>
+
 </html>
